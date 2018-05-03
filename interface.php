@@ -28,9 +28,6 @@ function getLocation() {
 }
 
 
-
-
-
 function showPosition(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
@@ -38,10 +35,6 @@ function showPosition(position) {
     //document.write(" / ");
     //document.write(lon);
     
-
-    
-
-
 
     var latlon = new google.maps.LatLng(lat, lon)
     var mapholder = document.getElementById('mapholder')
