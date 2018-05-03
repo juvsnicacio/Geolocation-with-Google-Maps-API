@@ -1,25 +1,39 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
 
-$nomeCadastro = $_POST["nome"];
-echo $nomeCadastro;
+  <script src="main.js"></script>
+</head>
+<body>
+<?php
+$teste = "<script>localizarUsuario()</script>";
+echo ($teste);
 ?>
+<button onClick="localizarUsuario()">Minha Localização</button> <br>
+
 
 <script>
-minAjax({
-    url:"testeAjax.php",//request URL
-    type:"POST",//Request type GET/POST
-    //Send Data in form of GET/POST
-    data:{
-      name:"batman",
-      profession:"detective",
-      worth:"Rich",
-      company:"Wayne Enterprises"
-    },
-    //CALLBACK FUNCTION with RESPONSE as argument
-    success: function(data){
-      alert(data);
-    }
 
-  });
+function localizarUsuario(){
+  if (window.navigator && window.navigator.geolocation) {
+   var geolocation = window.navigator.geolocation;
+   geolocation.getCurrentPosition(sucesso, erro);
+  } else {
+     alert('Geolocalização não suportada em seu navegador.')
+  }
+  function sucesso(posicao){
+    console.log(posicao);
+    var latitude = posicao.coords.latitude;
+    var longitude = posicao.coords.longitude;
+    //alert('Sua latitude estimada é: ' + latitude + ' e longitude: ' + longitude );
+    document.write(latitude);
+  }
+  function erro(error){
+    console.log(error)
+  }
+}
 
-  </script>
+</script>
+
+</body>
+</html>
