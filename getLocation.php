@@ -13,7 +13,5 @@ if($address=file_get_contents("http://maps.googleapis.com/maps/api/geocode/json?
 else{
     echo "erro";
 }
-
-
 ?>
 

@@ -2,7 +2,6 @@
 <html>
 <body onload="getLocation()">
 
-
 <form action="getLocation.php" method="POST" id="signfrm"  enctype="multipart/form-data">
     <input type="hidden" name="latitude" value="" id="lt" />
     <input type="hidden" name="longitude" value="" id="lg" />
@@ -13,7 +12,6 @@
     function getLocation() {
         navigator.geolocation.getCurrentPosition(showPosition);
     }
-
     function showPosition(position) {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
