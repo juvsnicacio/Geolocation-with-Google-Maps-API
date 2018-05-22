@@ -19,7 +19,6 @@
         document.getElementById('lt').value = lat;
         document.getElementById('lg').value = lon;
     }
-
 </script>
 
 </body>
